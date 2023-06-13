@@ -37,7 +37,7 @@ Experiments in three different datasets - Laussane, Geolife, iWet - show that th
 and AdaHessian optimizer contribute to a significant improvement in performance. 
 
 The pre-processing of the navigation data is by Ioannis Tsingalis and can be found here: <br>
-[Map Matching for Gretel Algorithm](https://github.com/iTsingalis/cretel_map_matching)
+[Map Matching for Gretel Algorithm](https://github.com/iTsingalis/gretel_map_matching)
 
 ## Reproductibility
 
