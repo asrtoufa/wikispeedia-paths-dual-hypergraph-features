@@ -36,6 +36,8 @@ Additionally, a second-order optimizer, AdaHessian, is employed to further enhan
 Experiments in three different datasets - Laussane, Geolife, iWet - show that the use of hypergraph features 
 and AdaHessian optimizer contribute to a significant improvement in performance. 
 
+The pre-processing of the navigation data is by Ioannis Tsingalis and can be found here: <br>
+[Map Matching for Gretel Algorithm](https://github.com/iTsingalis/cretel_map_matching)
 
 ## Reproductibility
 
@@ -134,8 +136,8 @@ In the `gretel/config/gps_target` file set:
     - laussane
 - `edge_filename` - the available options are:
     - `{input_directory}_hyperedge_similarity.txt`
-    - `{input_directory}_hyperedge_DNnode_in_out_degree.txt.txt`
-    - `{input_directory}_hyperedge_similarity_DNnode_in_out_degree.txt.txt`
+    - `{input_directory}_hyperedge_DNnode_in_out_degree.txt`
+    - `{input_directory}_hyperedge_similarity_DNnode_in_out_degree.txt`
 
 
 You can load the data with the corresponding features:
@@ -150,8 +152,11 @@ with open(os.path.join(input_dir, '{input_directory}_hyper_edge_features.pickle'
 ```
 
 
-## Acnowlegment
+## Acknowledgment
 
-- [Gretel - Extrapolating paths with graph neural networks]((https://github.com/jbcdnr/gretel-path-extrapolation))
-- [Dual Hypergraph Transformation (DHT) - Edge Representation Learning with Hypergraphs](https://github.com/harryjo97/EHGNN)
-- [Fast Map Matching](https://github.com/cyang-kth/fmm) - matching noisy GPS data to a road network.
+- Gretel - Extrapolating paths with graph neural networks: [[code]](https://github.com/jbcdnr/gretel-path-extrapolation)- 
+[[paper]](https://arxiv.org/abs/1903.07518)
+- Edge Representation Learning with Hypergraphs: [[code]](https://github.com/harryjo97/EHGNN) - 
+[[paper]](https://arxiv.org/abs/2106.15845)
+- Fast Map Matching: [[code]](https://github.com/cyang-kth/fmm) - 
+[[paper]](https://www.researchgate.net/publication/321031746_Fast_map_matching_an_algorithm_integrating_hidden_Markov_model_with_precomputation)
