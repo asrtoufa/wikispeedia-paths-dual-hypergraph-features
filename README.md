@@ -12,11 +12,11 @@ This approach is applied to two problems: Wikipedia data and GPS navigation data
 
 ![alt text](DHT.png)
 
-## Wikipedia
+## Wikispeedia Dataset
 
 Implementation of the paper [Dual Hypergraph Features for Path Inference in Wikipedia Links]().
 
-In the Wikipedia data, a graph is constructed where articles are nodes 
+In the Wikispeedia data, a graph is constructed where articles are nodes 
 and the links between articles are edges. 
 The most informative features are extracted from the nodes and edges of the graph,
 incorporating the article categories and centrality indicators such as the eigenvector and page-rank centrality. 
@@ -28,7 +28,7 @@ Using the similarity of the incidence vectors and the in/out-degree of dual hype
 from a directed version of the hypergraph it is shown that the new features leading to 
 an improvement in the performance of GRETEL.
 
-## Wikipedia Central Macedonia (WCM) Dataset Experiments
+## Wikipedia Central Macedonia (WCM) Dataset 
 
 Following the implementation framework of the paper [Dual Hypergraph Features for Path Inference in Wikipedia Links](), we extend our experiments to the Wikipedia Central Macedonia (WCM) dataset. This dataset is specifically designed to explore the dynamics of Wikipedia navigation paths within the context of Central Macedonia, featuring two distinct types of graphs: a Dense Graph and a Sparse Graph. The dataset construction involves a crawling process, targeting articles related to Central Macedonia and capturing the intricate network of links between these articles.
 
