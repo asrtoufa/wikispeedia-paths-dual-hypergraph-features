@@ -116,7 +116,7 @@ You can format your own data following the format defined in `main.py:load_data(
 
 ### Run
 
-##### Wikipedia
+##### Wikispeedia
 In the `gretel/config/wiki_target` file set:
 - `experiment_name` 
 - `edge_filename` - the available options are:
