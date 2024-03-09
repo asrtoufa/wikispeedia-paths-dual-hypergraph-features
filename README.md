@@ -28,6 +28,13 @@ Using the similarity of the incidence vectors and the in/out-degree of dual hype
 from a directed version of the hypergraph it is shown that the new features leading to 
 an improvement in the performance of GRETEL.
 
+## Wikipedia Central Macedonia (WCM) Dataset Experiments
+
+Following the implementation framework of the paper [Dual Hypergraph Features for Path Inference in Wikipedia Links](), we extend our experiments to the Wikipedia Central Macedonia (WCM) dataset. This dataset is specifically designed to explore the dynamics of Wikipedia navigation paths within the context of Central Macedonia, featuring two distinct types of graphs: a Dense Graph and a Sparse Graph. The dataset construction involves a crawling process, targeting articles related to Central Macedonia and capturing the intricate network of links between these articles.
+
+For detailed information on the creation of the WCM dataset, refer to our GitHub repository at [Wikipedia Central Macedonia Dataset](https://github.com/MarthaSotiroudi/Wikipedia-Central-Macedonia-Dataset).
+
+In these experiments, we illustrate how incorporating the semantic information of article contents, along with article categories and centrality indicators (eigenvector and page-rank centrality), enriches the feature set, thereby improving the predictability of the model. The contrast between the Dense and Sparse Graphs provides valuable insights into how graph density influences path prediction capabilities.
 
 ## Navigation data
 
@@ -59,6 +66,9 @@ You can format your own data following the format defined in `main.py:load_data(
 |        ├── gps_target
 |        ├── wiki_nll
 |        ├── wiki_target
+|        ├── WCM_nll
+|        ├── WCM_target
+
 |   ├── AdaHessian.py
 |   ├── config.py
 |   ├── ...
@@ -66,6 +76,7 @@ You can format your own data following the format defined in `main.py:load_data(
 |   ├── chkpt
 |        ├── gps-target
 |        └── wikispeedia-target
+|        └── WCM-target
 |   ├── gps
 |        └── geolife
 |        └── iWet
@@ -77,6 +88,18 @@ You can format your own data following the format defined in `main.py:load_data(
 |        └── edges.txt
 |        └── edges_nof_fasttextbody.txt
 |        └── ...
+|   ├── WCM
+|       ├──  Dense Graph
+|             └── plaintext_articles
+|             └── edges.txt
+|             └── edges_nof_fasttextbody.txt
+|             └── ...
+|       ├──  Sparse Graph
+|             └── plaintext_articles
+|             └── edges.txt
+|             └── edges_nof_fasttextbody.txt
+|             └── ...
+
 ├── environment.yml
 ├── README.md
 ├── requirements.txt
@@ -89,6 +112,7 @@ You can format your own data following the format defined in `main.py:load_data(
     - `workspace/wikispeedia/fastText` : download the pretrained model from https://fasttext.cc/docs/en/crawl-vectors.html
     and save it under this directory
     - `workspace/wikispeedia/raw_input_data` : data from http://snap.stanford.edu/data/wikispeedia.html
+- `workspace/WCM/...` : Wikipedia Central Macedonia data
 
 
 ### Run
@@ -125,6 +149,18 @@ with open(os.path.join(input_dir, 'original_hyper_node_features.pickle'), 'rb') 
 # load edge features
 with open(os.path.join(input_dir, 'original_hyper_edge_features.pickle'), 'rb') as f:   
     edge_features = pickle.load(f)
+```
+
+##### Wikipedia Central Macedonia
+In the `gretel/config/WCM_target` file set: `dataset: WCM/Dense Graph` for the dense graph and `WCM/Sparse Graph` for the sparse graph.
+- `edge_filename` - the available options are:
+    - `edges.txt`
+    - `edges_original_hyperedge_in_out_degree.txt`
+    - `edges_original_hyperedge_similarity.txt`
+    - `edges_original_hyperedge_similarity_in_out_degree.txt`
+
+```bash
+python main.py config/WCM_target
 ```
 
 ##### GPS navigation
