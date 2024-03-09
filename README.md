@@ -89,17 +89,16 @@ You can format your own data following the format defined in `main.py:load_data(
 |        └── edges_nof_fasttextbody.txt
 |        └── ...
 |   ├── WCM
-|       ├──  Dense Graph
-|             └── plaintext_articles
-|             └── edges.txt
-|             └── edges_nof_fasttextbody.txt
-|             └── ...
-|       ├──  Sparse Graph
-|             └── plaintext_articles
-|             └── edges.txt
-|             └── edges_nof_fasttextbody.txt
-|             └── ...
-
+|        ├──  Dense Graph
+|              └── plaintext_articles
+|              └── edges.txt
+|              └── edges_nof_fasttextbody.txt
+|              └── ...
+|        ├──  Sparse Graph
+|              └── plaintext_articles
+|              └── edges.txt
+|              └── edges_nof_fasttextbody.txt
+|              └── ...
 ├── environment.yml
 ├── README.md
 ├── requirements.txt
