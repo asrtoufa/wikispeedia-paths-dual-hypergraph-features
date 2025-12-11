@@ -417,7 +417,7 @@ with open(os.path.join(input_dir, "edges_only.txt"), "w") as f:
 """
 Save the edge and node features in pickle files
 """
-with open(os.path.join(input_dir, 'geolife_node_features.pickle'), 'wb') as f:
+with open(os.path.join(input_dir, 'original_node_features.pickle'), 'wb') as f:
     pickle.dump(original_node_features, f, protocol=pickle.HIGHEST_PROTOCOL)
 
 with open(os.path.join(input_dir, 'original_edge_features.pickle'), 'wb') as f:
@@ -425,7 +425,7 @@ with open(os.path.join(input_dir, 'original_edge_features.pickle'), 'wb') as f:
 
 
 # load nodes features
-# with open(os.path.join(input_dir, 'geolife_node_features.pickle'), 'rb') as f:
+# with open(os.path.join(input_dir, 'original_node_features.pickle'), 'rb') as f:
 #     nodes_features = pickle.load(f)
 
 
