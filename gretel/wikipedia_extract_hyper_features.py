@@ -35,7 +35,7 @@ n_hypernodes = n_edges
 n_hyperedges = n_nodes
 
 
-with open(os.path.join(input_dir, 'geolife_node_features.pickle'), 'rb') as f:
+with open(os.path.join(input_dir, 'original_node_features.pickle'), 'rb') as f:
     original_node_features = pickle.load(f)
 
 with open(os.path.join(input_dir, 'original_edge_features.pickle'), 'rb') as f:
